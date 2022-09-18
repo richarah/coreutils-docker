@@ -4,7 +4,8 @@ WORKDIR /build
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git build-essential
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    git build-essential bison gperf makeinfo autoconf rsync 
 RUN git clone git://git.sv.gnu.org/coreutils
 
 WORKDIR /build/coreutils

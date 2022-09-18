@@ -5,7 +5,7 @@ WORKDIR /build
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    git build-essential bison gperf texinfo autoconf \
+    git build-essential bison gperf texinfo autoconf wget \
     gettext autopoint rsync 
 RUN git clone git://git.sv.gnu.org/coreutils
 

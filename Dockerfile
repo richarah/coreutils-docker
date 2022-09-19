@@ -29,4 +29,4 @@ RUN make
 
 WORKDIR /build/coreutils/src
 RUN rm -rf *.c *.h *.o *.a *.mk *.hin blake2 extract-magic
-RUN mkdir docker && tar -zcvf coreutils.tar.gz /build/coreutils/src -C /docker
+RUN mkdir /docker && tar -zcvf coreutils.tar.gz /build/coreutils/src -C /docker

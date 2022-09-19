@@ -6,7 +6,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     git build-essential bison gperf texinfo autoconf wget \
-    gettext autopoint rsync 
+    gettext autopoint rsync tar xz-utils
 
 RUN git clone git://git.sv.gnu.org/coreutils
 WORKDIR /build/coreutils

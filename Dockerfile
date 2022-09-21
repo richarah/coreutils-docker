@@ -1,5 +1,6 @@
 FROM ubuntu:jammy
 
+RUN mkdir /docker
 WORKDIR /build
 
 RUN apt-get update
@@ -27,6 +28,8 @@ RUN bash ./bootstrap
 RUN bash ./configure
 RUN make
 
+USER root
+
 WORKDIR /build/coreutils/src
 RUN rm -rf *.c *.h *.o *.a *.mk *.hin blake2 extract-magic
-RUN mkdir /docker && tar -zcvf coreutils.tar.gz /build/coreutils/src -C /docker
+RUN tar -zcvf /docker/coreutils.tar.gz .
